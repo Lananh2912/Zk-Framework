@@ -1,0 +1,46 @@
+<?page title="Quản lý giảng viên" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/template/layout.zul"?>
+<vlayout width="100%" apply="controller.UserController"
+	self="@define(content)">
+	<div height="50px" style="margin-top:30px; font-size:14px">
+	<label style="font-size:14px">QUẢN LÝ GIẢNG VIÊN</label>
+	</div>
+	<hbox align="center" style="margin-bottom: 10px;">
+		Tìm kiếm:
+		<textbox id="keywordBox" />
+		<button id="searchButton" label="Tìm kiếm"
+			image="/img/search.png" />
+		<button id="addButton" label="Thêm mới"/>
+	</hbox>
+	<listbox id="userListbox" rows="6"
+		emptyMessage="Không tìm thấy giảng viên!" mold="paging"
+		pageSize="6">
+		<listhead>
+			<listheader label="Username" width="150px"/>
+			<listheader label="Họ và tên"/>
+			<listheader label="Quyền hạn" width="100px"/>
+			<listheader label="Bộ môn" width="100px"/>
+			<listheader label="Chức năng" width="140px"/>
+		</listhead>
+		<template name="model">
+			<listitem>
+				<listcell label="${each.username}"></listcell>
+				<listcell>
+					<label value="${each.fullname}" />
+				</listcell>
+				<listcell label="${each.permission}"></listcell>
+				<listcell label="${each.depcode}"></listcell>
+				<listcell >
+					<hlayout>
+						<button label="Cập nhật"
+							forward="onClick=userListbox.onEdit" id="Edit${each.id}" />
+						<button label="Xóa"
+							forward="onClick=userListbox.onDelete" id="Delete${each.id}"
+							 />
+					</hlayout>
+				</listcell>
+			</listitem>
+		</template>
+	</listbox>
+	
+</vlayout>

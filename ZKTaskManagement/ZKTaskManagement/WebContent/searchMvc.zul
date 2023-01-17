@@ -1,0 +1,64 @@
+<?page title="Quản lý công việc" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/template/layout.zul"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
+<vlayout width="100%" apply="controller.SearchController"
+	self="@define(content)">
+	<div height="50px" style="margin-top:30px; font-size:14px">
+	<label style="font-size:14px">QUẢN LÝ CÔNG VIỆC</label>
+	</div>
+	<hbox align="center" style="margin-bottom: 10px;">
+		Tìm kiếm:
+		<textbox id="keywordBox" />
+		Từ ngày:
+		<datebox id="fromDate" format="dd/MM/yyyy"  />
+		Đến ngày:
+		<datebox id="toDate" format="dd/MM/yyyy" />
+		<button id="searchButton" label="Tìm kiếm"
+			image="/img/search.png" />
+		<button id="addButton" label="Thêm mới"/>
+	</hbox>
+	<listbox id="taskListbox" rows="6"
+		emptyMessage="No task found in the result" mold="paging"
+		pageSize="6">
+		<listhead>
+			<listheader label="Tên" width="150px"/>
+			<listheader label="Trạng thái" width="100px"/>
+			<listheader label="Mô tả"/>
+			<listheader label="Bộ môn" width="100px"/>
+			<listheader label="Ngày" width="100px"/>
+			<listheader label="Chức năng" width="240px" style="text-align: center"/>
+		</listhead>
+		<template name="model">
+			<listitem>
+				<listcell label="${each.name}"></listcell>
+				<listcell label="${each.status}"></listcell>
+				<listcell>
+					<label value="${each.description}" />
+				</listcell>
+				<listcell label="${each.depcode}"></listcell>
+				<listcell label="${c:formatDate(each.date, 'dd/MM/yyyy')}"></listcell>
+				<listcell >
+					<hlayout>
+						<button label="Chi tiết"
+							forward="onClick=taskListbox.onView" id="View${each.id}" />
+						<button label="Cập nhật"
+							forward="onClick=taskListbox.onEdit" id="Edit${each.id}" />
+						<button label="Tạm dừng"
+							forward="onClick=taskListbox.onCancel" id="Cancel${each.id}" />
+						<button label="Xóa"
+							forward="onClick=taskListbox.onDelete" id="Delete${each.id}"
+							if="${sessionScope.sessionCurr.permission == '1'}" />
+					</hlayout>
+				</listcell>
+			</listitem>
+		</template>
+	</listbox>
+	<zscript>
+	import java.util.Date;
+	import java.text.SimpleDateFormat;
+ 		java.util.Date date = new java.util.Date();
+ 		
+ 		Date defaultDate = new Date();
+ 		defaultDate.setDate(01);
+	</zscript>
+</vlayout>

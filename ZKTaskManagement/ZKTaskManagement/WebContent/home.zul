@@ -1,0 +1,78 @@
+<?page title="Trang chủ" contentType="text/html;charset=UTF-8"?>
+
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/template/layout.zul"?>
+<window id="mainmenubar" apply="org.zkoss.bind.BindComposer"
+	border="none" onCreate="@command('onFulfill')" self="@define(content)"
+	viewModel="@id('vm') @init('controller.TaskVM')">
+	<hlayout>
+		<tree model="@bind(vm.model1)" id="mytree" zclass="z-filetree"
+			height="auto" width="310px" rows="15" mold="paging"
+		pageSize="15">
+			<treecols>
+				<treecol label="To do" width="100px" />
+				<treecol label="" width="150px" />
+				<treecol width="50px" />
+			</treecols>
+			<template name="model" var="node" status="s">
+				<treeitem open="true">
+					<treerow droppable="true" draggable="true"
+						onDrop="@command('onDropItem', dragged = event.dragged, target = event.getTarget())">
+						<treecell label="@bind(node.name)" />
+						<treecell label="@bind(node.description)"  />
+						<treecell>
+							<button image="/img/cmt_img.jpg"
+								if="${node.status == 'To do'}"
+								onClick="@command('onClickComment', id = node.id)" />
+						</treecell>
+					</treerow>
+				</treeitem>
+			</template>
+		</tree>
+		<tree model="@bind(vm.model2)" id="mytree2" zclass="z-filetree"
+			width="310px" height="auto" rows="15" mold="paging"
+		pageSize="15">
+			<treecols>
+				<treecol label="Doing" width="100px" />
+				<treecol label="" width="150px" />
+				<treecol width="50px" />
+			</treecols>
+			<template name="model" var="node" status="s">
+				<treeitem open="true">
+					<treerow droppable="true" draggable="true"
+						onDrop="@command('onDropItem', dragged = event.dragged, target = event.getTarget())">
+						<treecell label="@bind(node.name)" />
+						<treecell label="@bind(node.description)" />
+						<treecell>
+							<button image="/img/cmt_img.jpg"
+								if="${node.status == 'Doing'}"
+								onClick="@command('onClickComment', id = node.id)" />
+						</treecell>
+					</treerow>
+				</treeitem>
+			</template>
+		</tree>
+		<tree model="@bind(vm.model3)" id="mytree3" zclass="z-filetree"
+			width="310px" height="auto" rows="15" mold="paging"
+		pageSize="15">
+			<treecols>
+				<treecol label="Done" width="100px" />
+				<treecol label="" width="150px" />
+				<treecol width="50px" />
+			</treecols>
+			<template name="model" var="node" status="s">
+				<treeitem open="true">
+					<treerow droppable="true" 
+						onDrop="@command('onDropItem', dragged = event.dragged, target = event.getTarget())">
+						<treecell label="@bind(node.name)" />
+						<treecell label="@bind(node.description)" />
+						<treecell>
+							<button image="/img/cmt_img.jpg"
+								if="${node.status == 'Done'}"
+								onClick="@command('onClickComment', id = node.id)" />
+						</treecell>
+					</treerow>
+				</treeitem>
+			</template>
+		</tree>
+	</hlayout>
+</window>

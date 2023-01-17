@@ -1,0 +1,44 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="modalDialog" closable="true" title="Edit User"
+		border="normal" apply="controller.UpdateUserController" width="50%">
+
+			<grid id="formGrid" ctrlKeys="^h" vflex="1">
+				<rows>
+					<row>
+						User Id
+						<label id="msg"></label>
+					</row>
+					<row>
+						Username
+						<textbox id="usernameTb" width="100%"></textbox>
+					</row>
+					<row>
+						Password
+						<textbox id="passwordTb" width="100%"></textbox>
+					</row>
+					<row>
+						Họ tên
+						<textbox id="fullnameTb" width="100%"></textbox>
+					</row>
+					<row>
+						Quyền hạn
+						<textbox id="permissionTb" width="100%"></textbox>
+					</row>
+					<row>
+					Bộ môn
+					<combobox id="depcodeTb">
+						<comboitem label="bmcnpm"/>
+						<comboitem label="bmkhmt"/>
+						<comboitem label="bmmvhttt"/>
+						<comboitem label="bmt"/>
+						<comboitem label="bmvl"/>
+						<comboitem label="tvp"/>
+					</combobox>
+					</row>
+				</rows>
+			</grid>
+
+			<button id="updateUserBtn" hflex="1" label="Cập nhật" style="float:right; margin-top:8px"/>
+	</window>
+</zk>

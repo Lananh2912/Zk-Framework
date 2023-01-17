@@ -1,0 +1,27 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<vlayout vflex="1" hflex="1" apply="controller.LoginController" >
+	<div vflex="4">
+		<separator class="header-bar" />
+		<vlayout style="text-align: center">
+			<label class="header-title1" value="Task Management" style="text-align: center, font-size: 16px" />
+			<label class="header-title2"
+			value="Khoa Công nghệ thông tin - Học viện Nông Nghiệp Việt Nam" />
+		</vlayout>
+	</div>
+	<div vflex="1" style="background-color:white; border-bottom:0px; border-radius: 10px;">
+		<menubar id="menubar" vflex="1" width="100%" autodrop="true"
+			style="borderbottom:0px;">
+			<menuitem label="Trang chủ" href="/home.zul" style="color:#000000cc" />
+			<menuitem label="Quản lý công việc" href="/searchMvc.zul" style="color:#000000cc" />
+			<menuitem label="Danh sách tạm dừng" href="/cancelTask.zul" style="color:#000000cc" />
+			<menuitem label="Quản lý giảng viên" href="/userMvc.zul" style="color:#000000cc" 
+						if="${sessionScope.sessionCurr.permission == '1'}"/>
+			<menuitem label="Đăng xuất" id="logout" style="float:right;" />
+			<menuitem label="Xin chào ${sessionScope.sessionCurr.fullname}" 
+						style="float:right;color:#000000cc" disabled="true">
+			</menuitem>
+		</menubar>
+	</div>
+</vlayout>
+</zk>

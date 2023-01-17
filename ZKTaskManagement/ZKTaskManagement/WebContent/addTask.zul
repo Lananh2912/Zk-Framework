@@ -1,0 +1,42 @@
+<?page title="Thêm mới công việc" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="modalDialog" closable="true" title="Thêm mới công việc"
+		border="normal" apply="controller.AddTaskController" width="50%">
+
+		<grid id="formGrid" ctrlKeys="^h" vflex="1">
+			<rows>
+				<row>
+					<label>Tên công việc</label>
+					<textbox id="nameTb" width="100%" constraint="no empty: Không được để trống!"></textbox>
+				</row>
+				<row>
+					Trạng thái
+					<textbox id="statusTb" value="To do" readonly="true" width="100%"></textbox>
+				</row>
+				<row>
+					Mô tả
+					<textbox id="descriptionTb" width="100%" constraint="no empty: Không được để trống!"></textbox>
+				</row>
+				<row>
+					Mức độ ưu tiên
+					<combobox id="priorityCb" constraint="no empty: Không được để trống!">
+						<comboitem label="High"/>
+						<comboitem label="Low"/>
+					</combobox>
+				</row>
+				<row>
+					Bộ môn
+					<combobox id="depcodeTb" buttonVisible="${sessionScope.sessionCurr.permission != '2'}" readonly="${sessionScope.sessionCurr.permission == '2'}">
+						<comboitem label="bmcnpm"/>
+						<comboitem label="bmkhmt"/>
+						<comboitem label="bmmvhttt"/>
+						<comboitem label="bmt"/>
+						<comboitem label="bmvl"/>
+						<comboitem label="tvp"/>
+					</combobox>
+				</row>
+			</rows>
+		</grid>
+		<button id="addTaskBtn" hflex="1" label="Thêm mới" style="float:right; margin-top:8px"/>
+	</window>
+</zk>

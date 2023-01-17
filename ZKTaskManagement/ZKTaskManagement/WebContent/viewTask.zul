@@ -1,0 +1,55 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="modalDialog" closable="true" title="Chi tiết công việc"
+		border="normal" apply="controller.ViewTaskController" width="50%">
+
+			<grid id="formGrid" ctrlKeys="^h" vflex="1">
+				<rows>
+					<row>
+						Task Id
+						<label id="msg"></label>
+					</row>
+					<row>
+						Tên nhiệm vụ
+						<textbox id="nameTb" width="100%" readonly="true"></textbox>
+					</row>
+					<row>
+						Trạng thái
+						<combobox id="statusTb" buttonVisible="false"  readonly="true">
+							<comboitem label="To do"/>
+							<comboitem label="Doing"/>
+							<comboitem label="Done"/>
+							<comboitem label="Cancel"/>
+						</combobox>
+					</row>
+					<row>
+						Mô tả
+						<textbox id="descriptionTb" width="100%" readonly="true"></textbox>
+					</row>
+					<row>
+						Mức độ ưu tiên
+						<combobox id="priorityCb" buttonVisible="false" readonly="true">
+							<comboitem label="High"/>
+							<comboitem label="Low"/>
+						</combobox>
+					</row>
+					<row>
+					Bộ môn
+					<combobox id="depcodeTb" buttonVisible="false" readonly="true">
+						<comboitem label="bmcnpm"/>
+						<comboitem label="bmkhmt"/>
+						<comboitem label="bmmvhttt"/>
+						<comboitem label="bmt"/>
+						<comboitem label="bmvl"/>
+						<comboitem label="tvp"/>
+					</combobox>
+				</row>
+				<row>
+					<label>File đính kèm</label>
+					<a id="uploadFile"></a>
+				</row>
+				</rows>
+			</grid>
+
+	</window>
+</zk>

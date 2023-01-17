@@ -1,0 +1,28 @@
+<vlayout xmlns:h="native" vflex="1">
+	<label class="sidebar-title" value="Các trang liên quan" />
+	<h:ul>
+		<h:li><a href="https://vnua.edu.vn/" target="_zkdemo" >Trang chủ VNUA</a></h:li>
+		<h:li><a href="http://daotao.vnua.edu.vn/" target="_zkdemo">Trang đào tạo VNUA</a></h:li>		
+		<h:li><a href="https://fita.vnua.edu.vn/" target="_zkdemo">Khoa CNTT</a></h:li>	
+	</h:ul>
+	
+	<separator class="sidebar-bar" />
+	
+	<label class="sidebar-title" value="Các bộ môn" />
+	<h:ul>
+		<h:li><a href="https://fita.vnua.edu.vn/bo-mon/bm-khoa-hoc-may-tinh/" target="_zkdemo" >BM Khoa học máy tính</a></h:li>
+		<h:li><a href="https://fita.vnua.edu.vn/bo-mon/bm-cong-nghe-phan-mem/" target="_zkdemo" >BM Công nghệ phần mềm</a></h:li>
+		<h:li><a href="https://fita.vnua.edu.vn/bo-mon/bm-mang-va-he-thong-thong-tin/" target="_zkdemo" >BM Mạng và Hệ thống thông tin</a></h:li>
+		<h:li><a href="https://fita.vnua.edu.vn/bo-mon/bm-toan/" target="_zkdemo" >BM Toán</a></h:li>
+		<h:li><a href="https://fita.vnua.edu.vn/bo-mon/bm-vat-ly/" target="_zkdemo" >BM Vật lý</a></h:li>
+		<h:li><a href="https://fita.vnua.edu.vn/bo-mon/" target="_zkdemo" >Tổ văn phòng</a></h:li>
+	</h:ul>
+	<separator class="sidebar-bar" />
+	<label class="sidebar-title" value="Giới thiệu" style="margin-bottom: 5px"/>
+	<a href="https://fita.vnua.edu.vn/gioi-thieu/" target="_zkdemo" image="/img/fita-logo.png" style="margin-left: 26px;"/>
+	<label value="Khoa Công nghệ thông tin (CNTT) – Học viện Nông nghiệp Việt Nam được thành lập ngày 10/10/2005"></label>
+	
+	
+
+
+</vlayout>

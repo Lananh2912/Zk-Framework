@@ -1,0 +1,18 @@
+<?page title="Auto Generated index.zul"?>
+<zk>
+	<window id="mainmenubar" apply="org.zkoss.bind.BindComposer"
+		border="none" onCreate="@command('onFulfill')"
+		viewModel="@id('vm') @init('controller.TaskVM')">
+		<tree model="@bind(vm.model)" id="mytree"
+			zclass="z-filetree"  
+			height="auto"  >
+			<template name="model" var="node" status="s">
+				<treeitem open="true">
+					<treerow>
+						<treecell label="@bind(node.name)" />
+					</treerow>
+				</treeitem>
+			</template>
+		</tree>
+	</window>
+</zk>

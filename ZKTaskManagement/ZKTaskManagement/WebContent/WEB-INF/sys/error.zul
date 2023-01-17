@@ -1,0 +1,3 @@
+<window title="Error ${requestScope['javax.servlet.error.status_code']}">
+    Cause: ${requestScope['javax.servlet.error.message']}    
+</window>

@@ -1,0 +1,57 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="modalDialog" closable="true" title="Cập nhật công việc"
+		border="normal" apply="controller.UpdateTaskController" width="50%">
+
+			<grid id="formGrid" ctrlKeys="^h" vflex="1">
+				<rows>
+					<row>
+						Task Id
+						<label id="msg"></label>
+					</row>
+					<row>
+						Tên nhiệm vụ
+						<textbox id="nameTb" width="100%"></textbox>
+					</row>
+					<row>
+						Trạng thái
+						<combobox id="statusTb" >
+							<comboitem label="To do"/>
+							<comboitem label="Doing"/>
+							<comboitem label="Done"/>
+							<comboitem label="Cancel"/>
+						</combobox>
+					</row>
+					<row>
+						Mô tả
+						<textbox id="descriptionTb" width="100%"></textbox>
+					</row>
+					<row>
+						Mức độ ưu tiên
+						<combobox id="priorityCb" >
+							<comboitem label="High"/>
+							<comboitem label="Low"/>
+						</combobox>
+					</row>
+					<row>
+					Bộ môn
+					<combobox id="depcodeTb" buttonVisible="${sessionScope.sessionCurr.permission != '2'}" readonly="${sessionScope.sessionCurr.permission == '2'}">
+						<comboitem label="bmcnpm"/>
+						<comboitem label="bmkhmt"/>
+						<comboitem label="bmmvhttt"/>
+						<comboitem label="bmt"/>
+						<comboitem label="bmvl"/>
+						<comboitem label="tvp"/>
+					</combobox>
+				</row>
+				<row>
+					<button id="addFile"
+										label="Thêm file" upload="true,multiple=false,accept=.pdf|.doc|.docx"/>
+					<a id="uploadFile"></a>
+				</row>
+				</rows>
+			</grid>
+
+			<button id="updateTaskBtn" hflex="1" label="Cập nhật" style="float:right; margin-top:8px"/>
+	</window>
+</zk>

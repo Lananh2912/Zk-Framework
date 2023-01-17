@@ -1,0 +1,40 @@
+<?page title="Danh sách công việc hủy bỏ" contentType="text/html;charset=UTF-8"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/template/layout.zul"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c"?>
+<zk>
+<vlayout width="100%" apply="controller.CancelTaskController"
+	self="@define(content)">
+	<listbox id="cancelTaskLb" rows="6"
+		emptyMessage="Không tìm thấy công việc nào!" mold="paging"
+		pageSize="6">
+		<listhead>
+			<listheader label="Tên" width="150px"/>
+			<listheader label="Trạng thái" width="100px"/>
+			<listheader label="Mô tả"/>
+			<listheader label="Bộ môn" width="150px"/>
+			<listheader label="Ngày" width="100px"/>
+			<listheader label="Chức năng" width="100px" style="text-align: center"/>
+		</listhead>
+		<template name="model">
+			<listitem>
+				<listcell label="${each.name}"></listcell>
+				<listcell label="${each.status}"></listcell>
+				<listcell>
+					<label value="${each.description}" />
+				</listcell>
+				<listcell label="${each.depcode}"></listcell>
+				<listcell label="${c:formatDate(each.date, 'dd/MM/yyyy')}"></listcell>
+				<listcell >
+					<hlayout style="padding-left: 10px">
+						<button label="Mở lại"
+							forward="cancelTaskLb.onReOpen" id="ReOpen${each.id}" />
+					</hlayout>
+				</listcell>
+			</listitem>
+		</template>
+	</listbox>
+</vlayout>
+<zscript>
+		java.util.Date date = new java.util.Date();
+	</zscript>
+	</zk>

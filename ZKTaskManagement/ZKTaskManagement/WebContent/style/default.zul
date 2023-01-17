@@ -1,0 +1,136 @@
+<style><![CDATA[
+.header {
+    background-color: #00547b;
+    color: white;
+}
+.header-bar {
+    height: 12px
+}
+.header-title1 {
+    color: white;
+    font-family: Tahoma;
+    font-size: 38px;
+    font-weight: bold;
+}
+.header-title2 {
+    color: #efefef;
+    font-family: Georgia;
+    font-size: 18px;
+    font-style: italic;
+}
+.center-left {
+    border-left: 1px solid #CFCFCF;
+    padding: 8px;
+}
+.center-left-inner {
+    border-right: 1px solid #CFCFCF;
+    color: #6f6f6f;
+}
+.center-right {
+    border-right: 1px solid #CFCFCF
+}
+.sidebar-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+.sidebar-bar {
+    border-top: 1px dotted gray;
+    margin-right: 5px;
+    margin-top: 15px;
+}
+.content-date {
+    color: #999999;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+}
+.content-title {
+    color: #015182;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    text-decoration: none;
+}
+.content-title:hover {
+    text-decoration: underline
+}
+.content-desc {
+    color: gray;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 14px;
+    white-space: normal;
+}
+.content-more {
+    color: gray;
+    font-family: 'Trebuchet MS',Trebuchet;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+}
+.footer {
+    background-color: #00547b;
+    border-top : 1px solid gray;
+    color: #EFEFEF;
+    text-align: center;
+	padding-top: 12px;
+}
+.z-a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #6f6f6f;
+}
+.z-menu-text, .z-menuitem-text {
+    padding: 1px;
+    font-size: 14px;
+}
+.z-listheader-content, .z-listcell-content, .z-listgroup-content, .z-listgroupfoot-content, .z-listfooter-content{
+	font-size: 14px;
+}
+
+.z-radio-content, .z-checkbox-content, .z-loading, .z-listcell-content ,.z-label{
+    font-size: 14px;
+}
+
+.z-treecol-content, .z-treecell-content, .z-treefooter-content {
+    font-size: 14px;
+    padding: 4px 5px;
+    line-height: 24px;
+    min-height: 32px;
+}
+.z-menuitem-content{
+	color:#000000cc;
+
+}
+.z-menuitem-content[disabled]{
+	color:#000000;
+}
+.z-window-header{
+	color: #000000f0;
+	font-size: 14px;
+	padding-left: 10px;
+}
+.header-title1 {
+    color: white;
+    font-family: Tahoma;
+    font-size: 38px;
+    font-weight: bold;
+   
+}
+.header-title2 {
+    color: #efefef;
+    font-family: Georgia;
+    font-size: 18px;
+    font-style: italic;
+}
+.z-menubar{
+	border-radius: 5px;
+}
+.z-textbox[disabled]{
+	color: #000 !important;
+}
+.z-button {
+	padding: 3px 5px;
+}
+
+]]></style>

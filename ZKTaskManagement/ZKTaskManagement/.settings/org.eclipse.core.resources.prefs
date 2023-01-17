@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/controller/AddTaskController.java=UTF-8
+encoding//src/controller/AddUserController.java=UTF-8
+encoding//src/controller/CancelTaskController.java=UTF-8
+encoding//src/controller/LoginController.java=UTF-8
+encoding//src/controller/SearchController.java=UTF-8
+encoding//src/controller/UpdateTaskController.java=UTF-8
+encoding//src/model/TaskServiceImpl.java=UTF-8

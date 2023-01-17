@@ -1,0 +1,38 @@
+<?page title="Trang đăng nhập" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<div height="100%" align="center"
+		style="background-image:url('./img/vnua2.jpg');background-repeat: no-repeat;
+    background-size: cover;"
+		apply="controller.LoginController">
+		
+		<grid width="20%" height="235px" style="border-radius: 10px">
+		
+			<auxhead>
+				<auxheader colspan="1" label="WEBSITE QUẢN LÝ CÔNG VIỆC"
+					style="font-size:15px; text-align:center" />
+			</auxhead>
+			<columns visible="false">
+				<column />
+			</columns>
+			<rows>
+				<row>Tài khoản :</row>
+				<row>
+					<textbox id="usernameTb" hflex="1" />
+				</row>
+				<row>Mật khẩu :</row>
+				<row>
+					<textbox id="passwordTb" type="password" hflex="1" />
+				</row>
+				<row align="center">
+
+					<button id="loginBtn" label="Đăng nhập" />
+				</row>
+
+				<row align="center">
+
+					<label id="message" sclass="warn" value="&#160;" />
+				</row>
+			</rows>
+		</grid>
+	</div>
+</zk>

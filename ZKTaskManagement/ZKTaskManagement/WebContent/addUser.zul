@@ -1,0 +1,39 @@
+<?page title="Thêm mới giảng viên" contentType="text/html;charset=UTF-8"?>
+<zk>
+	<window id="modalDialog" closable="true" title="Thêm mới giảng viên"
+		border="normal" apply="controller.AddUserController" width="50%">
+
+		<grid id="formGrid" ctrlKeys="^h" vflex="1">
+			<rows>
+				<row>
+					<label>Username</label>
+					<textbox id="usernameTb" width="100%" constraint="no empty: Không được để trống!"/>
+				</row>
+				<row>
+					Password
+					<textbox id="passwordTb" width="100%" constraint="no empty: Không được để trống!"/>
+				</row>
+				<row>
+					Họ tên
+					<textbox id="fullnameTb" width="100%" constraint="no empty: Không được để trống!"/>
+				</row>
+				<row>
+					Quyền hạn
+					<textbox id="permissionCb" width="100%" constraint="no empty: Không được để trống!"/>
+				</row>
+				<row>
+					Bộ môn
+					<combobox id="depcodeTb">
+						<comboitem label="bmcnpm"/>
+						<comboitem label="bmkhmt"/>
+						<comboitem label="bmmvhttt"/>
+						<comboitem label="bmt"/>
+						<comboitem label="bmvl"/>
+						<comboitem label="tvp"/>
+					</combobox>
+				</row>
+			</rows>
+		</grid>
+		<button id="addUserBtn" hflex="1" label="Thêm mới" style="float:right; margin-top:8px"/>
+	</window>
+</zk>
